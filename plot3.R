@@ -56,7 +56,7 @@ plot3 <- function(){
         df <- rbind(df,data.frame(emission=as.numeric(nrdpm),year=as.numeric(names(nrdpm)),type=rep(c("NON-ROAD"),each=4)))
                
         
-        
+        #plot the graph
         g <- ggplot(df, aes(x=year, y=emission)) + geom_line() + geom_point() 
         g <- g + facet_grid(. ~ type) + scale_y_continuous(breaks=df$emission)
         g <- g + scale_x_continuous(breaks=df$year) 
